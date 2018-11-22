@@ -1,19 +1,27 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { List } from 'antd'
+import { dispatch } from './store'
+import { readGoods } from './ducks/goods'
+import { List, Button } from 'antd'
 import Good from './Good'
 
 const { Item: ListItem } = List
 
 class Goods extends Component {
   config = { column: 3 }
+
+  handleClick = () => {
+    dispatch(readGoods({ isLoadMore: true }));
+  }
+
   render() {
-    const { data } = this.props
+    const { items, isListOver } = this.props
+    console.log(items)
     return(
       <Fragment>
-        {data && (
+        {items.length && (
           <List
-            dataSource={Object.values(data)}
+            dataSource={items}
             grid={this.config}
             renderItem={({id, title, description}) => (
               <ListItem key={id}>
@@ -22,6 +30,12 @@ class Goods extends Component {
             )}
           />
         )}
+        <Button
+          disabled={isListOver}
+          onClick={this.handleClick}
+        >
+          Load More
+        </Button>
       </Fragment>
     )
   }
@@ -29,7 +43,8 @@ class Goods extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.goods.data
+    items: state.goods.items,
+    isGameOver: state.goods.isGameOver
   }
 }
 

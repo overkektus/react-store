@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { readGoods } from './ducks/goods'
 import { dispatch } from './store'
+import { readGoods } from './ducks/goods'
 import Goods from './Goods'
 
 class HomePage extends Component {

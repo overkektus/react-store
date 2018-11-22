@@ -14,7 +14,7 @@ class Good extends Component {
 
   coverStyle = { width: 240 }
 
-  imgStyle = { maxHeight: 150, width: '100%', objectFit: 'cover' }
+  imgStyle = { maxHeight: 150, height: 150, width: '100%', objectFit: 'cover' }
 
   buyNow = () => alert("Buy now!");
 
