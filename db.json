@@ -1,0 +1,36 @@
+{
+  "goods": [
+    { "id": "1", "categoryId": "1", "title": "Good 1",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "2", "categoryId": "1", "title": "Good 2",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "3", "categoryId": "1", "title": "Good 3",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "4", "categoryId": "2", "title": "Good 4",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "5", "categoryId": "2", "title": "Good 5",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "6", "categoryId": "2", "title": "Good 6",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "7", "categoryId": "3", "title": "Good 7",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "8", "categoryId": "3", "title": "Good 8",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    },
+    { "id": "9", "categoryId": "3", "title": "Good 9",
+      "description": "Vegan sustainable slow-carb hexagon banjo, distillery glossier DIY ramps hashtag tote bag."
+    }
+  ],
+  "categories": [
+    { "id": "1", "title": "Apple" },
+    { "id": "2", "title": "Google" },
+    { "id": "3", "title": "Microsoft" }
+  ]
+}
