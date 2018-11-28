@@ -9,14 +9,14 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: HomePage
+        component: HomePage,
       },
       {
         path: '/basket',
-        component: BasketPage
-      }
-    ]
-  }
+        component: BasketPage,
+      },
+    ],
+  },
 ]
 
 export default routes

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import _ from 'lodash'
 import { connect } from 'react-redux'
 import { dispatch } from './store'
 import { readGoods } from './ducks/goods'
@@ -11,29 +12,25 @@ class Goods extends Component {
   config = { column: 3 }
 
   handleClick = () => {
-    dispatch(readGoods({ isLoadMore: true }));
+    dispatch(readGoods({ isLoadMore: true }))
   }
 
   render() {
     const { items, isListOver } = this.props
-    console.log(items)
-    return(
+    return (
       <Fragment>
         {items.length && (
           <List
             dataSource={items}
             grid={this.config}
-            renderItem={({id, title, description}) => (
+            renderItem={({ id, title, description }) => (
               <ListItem key={id}>
-                <Good key={id} {...{id, title, description}}/>
+                <Good key={id} {...{ id, title, description }} />
               </ListItem>
             )}
           />
         )}
-        <Button
-          disabled={isListOver}
-          onClick={this.handleClick}
-        >
+        <Button disabled={isListOver} onClick={this.handleClick}>
           Load More
         </Button>
       </Fragment>
@@ -41,11 +38,12 @@ class Goods extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const { selectedCategoryIds } = ownProps
   return {
-    items: state.goods.items,
-    isGameOver: state.goods.isGameOver
+    items: state.goods.items.filter(({ categoryId }) => selectedCategoryIds.includes(categoryId)),
+    isListOver: state.goods.isListOver,
   }
 }
 
-export default connect(mapStateToProps)(Goods);
+export default connect(mapStateToProps)(Goods)
